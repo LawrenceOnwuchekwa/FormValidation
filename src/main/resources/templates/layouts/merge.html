@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body>
+		
+		<!--header-->
+		<div th:replace="layouts/header :: header"></div>
+		
+		<!--content-->
+		<section layout:fragment="content">
+			<p>Replace this with a page that has layout:fragment="content"</p>
+		</section>
+		
+		
+		<!--footer-->
+		<div th:replace="layouts/footer :: footer"></div>
+		<script src="/js/bootstrap.bundle.js"></script>
+	</body>
+</html>

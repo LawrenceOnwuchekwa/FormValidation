@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html layout:decorate="layouts/merge">
+	<body>
+		<div layout:fragment="content">
+			<form action="#" method="post" th:action="@{processSubmit}" th:object="${wrapper}">
+			  <div class="mb-3">
+			    <label for="exampleInputEmail1" class="form-label">Email address</label>
+			    <input type="email" th:field="*{users.email}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+			    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+			  </div>
+			  <div class="mb-3">
+			    <label for="exampleInputPassword1" class="form-label">Age</label>
+			    <input type="number" th:field="*{users.age}" class="form-control" id="exampleInputPassword1">
+			    <p class="alert alert-danger" th:if="${#fields.hasErrors('users.age')}" th:text="${#fields.errors('users.age')}">Age error</p>
+			  </div>
+			  <div class="col-md-4">
+				<label for="validationDefault01" class="form-label">First name</label>
+				<input type="text" th:field="*{users.firstname}" class="form-control" id="validationDefault01" value="Mark" required>
+				<p class="alert alert-danger" th:if="${#fields.hasErrors('users.firstname')}" th:text="${#fields.errors('users.firstname')}">firstname error</p>
+			  </div>
+			  <div class="col-md-4">
+				<label for="validationDefault02" class="form-label">Last name</label>
+			    <input type="text" th:field="*{users.lastname}" class="form-control" id="validationDefault02" value="Otto" required>
+				<p class="alert alert-danger" th:if="${#fields.hasErrors('users.lastname')}" th:text="${#fields.errors('users.lastname')}">lastname error</p>
+			  </div>
+			  <div class="col-md-3">
+				<label for="validationDefault04" class="form-label">Country</label>
+				<select th:field="*{users.country}" class="form-select" id="validationDefault04" required>
+				  <option selected disabled value="">Choose...</option>
+				  <option th:each="p:${countries}" th:value="${p}" th:text="${p}">...</option>
+				</select>
+			  </div>
+			  <div class="col-md-3">
+				<label for="validationDefault04" class="form-label">Gender</label>
+				<select th:field="*{gerund}" class="form-select" id="validationDefault04" required>
+				  <option selected disabled value="">Choose...</option>
+				  <option th:each="gend:${T(com.lawhills.models.Gender).values()}" th:value="${gend}" th:text="${gend.getDisplayName()}">...</option>
+				</select>
+			  </div>
+			  <button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		</div>
+	</body>
+</html>

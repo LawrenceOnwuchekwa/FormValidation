@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html layout:decorate="layouts/merge">
+	<body>
+		<div class="container" layout:fragment="content">
+			<p th:text="${wrapper.users.firstname}">FirstName</p>
+			<p th:text="${wrapper.users.lastname}">LastName</p>
+			<p th:text="${wrapper.users.age}">Age</pth:text="${wrapper.users.age}">
+			<p th:text="${wrapper.users.country}">Country</pth:text="${wrapper.users.firstname}">
+			<p th:text="${wrapper.users.email}">Email</p>
+			<p th:text="${wrapper.gerund.getDisplayName}">Gender</p>
+		</div>
+	</body>
+</html>

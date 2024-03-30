@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<link href="/src/main/resources/static/css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<form class="row g-3">
+		  <div class="col-md-4">
+		    <label for="validationDefault01" class="form-label">First name</label>
+		    <input type="text" class="form-control" id="validationDefault01" value="Mark" required>
+		  </div>
+		  <div class="col-md-4">
+		    <label for="validationDefault02" class="form-label">Last name</label>
+		    <input type="text" class="form-control" id="validationDefault02" value="Otto" required>
+		  </div>
+		   <div class="col-md-4">
+		    <label for="validationDefault02" class="form-label">Email</label>
+		    <input type="email" class="form-control" id="validationDefault02" value="Otto" required>
+		  </div>
+		  <div class="col-md-3">
+		    <label for="validationDefault04" class="form-label">Country</label>
+		    <select class="form-select" id="validationDefault04" required>
+		      <option selected disabled value="">Choose...</option>
+		      <option th:each="p:${countries}" th:value="${p}" th:text="${p}">...</option>
+		    </select>
+		  </div>
+		  <div class="col-md-3">
+		    <label for="validationDefault04" class="form-label">Gender</label>
+		    <select class="form-select" id="validationDefault04" required>
+		      <option selected disabled value="">Choose...</option>
+		      <option th:each="gend:${gender}" th:value="${gend}" th:text="${gend.name()}">...</option>
+		    </select>
+		  </div>
+		  <div class="col-md-3">
+		    <label for="validationDefault05" class="form-label">Age</label>
+		    <input type="number" class="form-control" id="validationDefault05" required>
+		  </div>
+		  <br>
+		  <div class="col-12">
+		    <button class="btn btn-primary" type="submit">Submit</button>
+		  </div>
+		</form>
+	</body>
+</html>
